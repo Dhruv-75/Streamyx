@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from '../NavBar/NavBar';
 import './mainpage.css';
 
 function MainPage() {
@@ -18,18 +19,23 @@ function MainPage() {
   ];
 
   return (
-    <div className="container">
-      {videos.map((video, index) => (
-        <div className="video-card" key={index}>
-          <div className="thumbnail">
-            <img src={video.thumbnail} alt={video.title} />
-          </div>
-          <div className="video-title">{video.title}</div>
-          <div className="description-overlay">
-            <div className="description-content">{video.description}</div>
-          </div>
+    <div className='mainContainer'>
+      <NavBar />
+      <div className="content-container">
+        <div className="container">
+          {videos.map((video, index) => (
+            <div className="video-card" key={index}>
+              <div className="thumbnail">
+                <img src={video.thumbnail} alt={video.title} />
+              </div>
+              <div className="video-title">{video.title}</div>
+              <div className="description-overlay">
+                <div className="description-content">{video.description}</div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
