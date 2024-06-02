@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './login.css'; // Import the CSS file
+import { Route, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
 
   const [user, setUser] = useState({ email: '', password: '' })
   
@@ -17,7 +19,7 @@ const Login = () => {
       const fetchuser = JSON.parse(localStorage.getItem('user'));
       if (fetchuser) {
         if (fetchuser.email === user.email && fetchuser.password === user.password) {
-          alert("Login Success")
+          navigate("/mainpage")
         }else{
           alert("Invalid Credentials")
         }
