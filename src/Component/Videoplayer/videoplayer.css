@@ -1,0 +1,117 @@
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+video {
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.play {
+  margin-right: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to top, #000000, #ffffff);
+  border: none;
+  border-radius: 140px;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.play:hover {
+  transform: translateY(2px);
+}
+
+.play:focus {
+  outline: none;
+}
+
+
+.pause {
+  margin-right: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to top, #000000, #ffffff);
+  border: none;
+  border-radius: 140px;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.pause:hover {
+  transform: translateY(2px);
+}
+
+.pause:focus {
+  outline: none;
+}
+
+.forward{
+  margin-right: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 140px;
+  box-shadow: 40px 15px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  background: linear-gradient(to top, #000000, #ffffff);
+}
+.forward:hover{
+  transform: translateY(2px);
+}
+
+.backward{
+  margin-right: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 140px;
+  box-shadow: 40px 15px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  background: linear-gradient(to top, #000000, #ffffff);
+}
+.backward:hover{
+  transform: translateY(2px);
+}
+
+.backward:hover{
+  transform: translateY(2px);
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
