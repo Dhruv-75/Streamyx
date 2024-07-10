@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './videoplayer.css'
+import './videoplayer.css';
 
 const Videoplayer = ({ src, type }) => {
   const videoRef = useRef(null);
@@ -16,12 +16,12 @@ const Videoplayer = ({ src, type }) => {
 
   const handleForward = () => {
     const currentTime = videoRef.current.currentTime;
-    videoRef.current.currentTime = currentTime + 10; // Forward 10 seconds (adjust as needed)
+    videoRef.current.currentTime = currentTime + 10; // Forward 10 seconds
   };
 
   const handleBackward = () => {
     const currentTime = videoRef.current.currentTime;
-    videoRef.current.currentTime = currentTime - 10; // Backward 10 seconds (adjust as needed)
+    videoRef.current.currentTime = currentTime - 10; // Backward 10 seconds
   };
 
   return (
@@ -30,12 +30,12 @@ const Videoplayer = ({ src, type }) => {
         <source src={src} type={type} />
         Your browser does not support the video tag.
       </video>
-      {/* <div>
-        <button class="play" onClick={handlePlay}>Play</button>
-        <button class="pause" onClick={handlePause}>Pause</button>
+      <div>
+        <button className="play" onClick={handlePlay}>Play</button>
+        <button className="pause" onClick={handlePause}>Pause</button>
         <button className="forward" onClick={handleForward}>Forward 10s</button>
         <button className="backward" onClick={handleBackward}>Backward 10s</button>
-      </div> */}
+      </div>
     </div>
   );
 };
