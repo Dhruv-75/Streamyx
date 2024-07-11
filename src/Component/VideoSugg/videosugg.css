@@ -1,34 +1,41 @@
 .container {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping of items to new lines */
-    justify-content: flex-start; /* Align items to the start (left) of the container */
-    align-items: flex-start; /* Align items to the start (top) of the container */
-    padding: 20px;
-  }
-  
-  .video-suggestion {
-    width: 205px; /* Set width of the card */
-    height: 205px; /* Set height of the card */
-    background-color: white; /* Card background color */
-    border-radius: 10px; /* Rounded corners for the card */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle depth effect */
-    overflow: hidden; /* Hide any content that exceeds the card dimensions */
-    position: relative; /* Ensure positioning context */
-    text-align: left; /* Align content inside the card to the left */
-    margin-right: 20px; /* Space between cards */
-    margin-bottom: 20px; /* Space between rows */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
-  }
-  
-  .video-suggestion:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
-  }
-  
-  .video-logo, .video-logo1 {
-    width: 100%; /* Make the image width fill the card */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners for the image */
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-suggestion {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.video-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sprite-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/css_sprites.png') no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.video-suggestion:hover .sprite-preview {
+  opacity: 1;
+  animation: sprite-animation 1s steps(10) infinite;
+}
+
+@keyframes sprite-animation {
+  from { background-position: 0 0; }
+  to { background-position: -1000% 0; }
+}
