@@ -1,21 +1,17 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 .video-suggestion {
   position: relative;
   width: 200px;
   height: 150px;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 8px; /* Optional: Add border radius for a rounded corner effect */
 }
 
 .video-logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth transition for the thumbnail */
 }
 
 .sprite-preview {
@@ -24,18 +20,29 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/css_sprites.png') no-repeat;
-  background-size: cover;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sprite-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth transition for the preview frames */
+}
+
+.video-suggestion:hover .video-logo {
+  transform: scale(1.1); /* Optional: Scale up the thumbnail on hover for a zoom effect */
 }
 
 .video-suggestion:hover .sprite-preview {
   opacity: 1;
-  animation: sprite-animation 1s steps(10) infinite;
 }
 
-@keyframes sprite-animation {
-  from { background-position: 0 0; }
-  to { background-position: -1000% 0; }
+.video-suggestion:hover .sprite-preview img {
+  opacity: 1;
 }
