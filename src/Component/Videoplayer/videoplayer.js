@@ -1,8 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './videoplayer.css';
 
-const Videoplayer = ({ src, type }) => {
+const VideoPlayer = () => {
+  const location = useLocation();
   const videoRef = useRef(null);
+
+  const query = new URLSearchParams(location.search);
+  const src = query.get('src');
+  const type = query.get('type');
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
+  }, [src, type]);
 
   const handlePlay = () => {
     videoRef.current.play().catch(error => {
@@ -40,4 +52,4 @@ const Videoplayer = ({ src, type }) => {
   );
 };
 
-export default Videoplayer;
+export default VideoPlayer;
