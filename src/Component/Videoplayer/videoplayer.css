@@ -1,3 +1,19 @@
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  flex: 0 0 80%;
+}
+
+.right {
+  margin-top: 30vh;
+  margin-left: 90vw;
+  flex: 0 0 20%;
+}
+
+
 .video-container {
   position: absolute;
   top: 0;
@@ -64,7 +80,7 @@ button {
   outline: none;
 }
 
-.forward{
+.forward {
   margin-right: 8px;
   padding: 12px 20px;
   font-size: 16px;
@@ -78,11 +94,12 @@ button {
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   background: linear-gradient(to top, #000000, #ffffff);
 }
-.forward:hover{
+
+.forward:hover {
   transform: translateY(2px);
 }
 
-.backward{
+.backward {
   margin-right: 8px;
   padding: 12px 20px;
   font-size: 16px;
@@ -96,13 +113,15 @@ button {
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   background: linear-gradient(to top, #000000, #ffffff);
 }
-.backward:hover{
+
+.backward:hover {
   transform: translateY(2px);
 }
 
-.backward:hover{
+.backward:hover {
   transform: translateY(2px);
 }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -114,4 +133,3 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
-
