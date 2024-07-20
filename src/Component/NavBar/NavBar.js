@@ -33,10 +33,7 @@ function NavBar() {
               <li><Link to="/settings" className="dropdown-link">Settings</Link></li>
               <li><Link to="/logout" className="dropdown-link">Logout</Link></li>
             </ul>
-          </div>
-        )}
-      </div>
-    </nav>
+          <
   );
 }
 
