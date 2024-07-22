@@ -1,12 +1,7 @@
-<<<<<<< Updated upstream
-import React, { useRef } from 'react';
-import './videoplayer.css'
-=======
 import React, { useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './videoplayer.css';
 import { VideoSuggestion } from '../VideoSuggestion/VideoSuggestion';
->>>>>>> Stashed changes
 
 const Videoplayer = ({ src, type }) => {
   const videoRef = useRef(null);
@@ -38,22 +33,17 @@ const Videoplayer = ({ src, type }) => {
         <source src={src} type={type} />
         Your browser does not support the video tag.
       </video>
-      {/* <div>
+       <div>
         <button class="play" onClick={handlePlay}>Play</button>
         <button class="pause" onClick={handlePause}>Pause</button>
         <button className="forward" onClick={handleForward}>Forward 10s</button>
         <button className="backward" onClick={handleBackward}>Backward 10s</button>
-<<<<<<< Updated upstream
-      </div> */}
-    </div>
-=======
       </div>
       </div> 
       <div className=' right'>
       <VideoSuggestion/>
       </div>
       </div>
->>>>>>> Stashed changes
   );
 };
 
