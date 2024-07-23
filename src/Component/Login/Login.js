@@ -26,22 +26,22 @@ const Login = () => {
       }
     }
   }
-  return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form>
-        <div>
-          <label>Email:</label>
-          <input type="email" name="email" onChange={(e)=>inputHandeler("email",e.target.value)}/>
-        </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" onChange={(e)=>inputHandeler("password",e.target.value)} />
-        </div>
-        <button type="submit" onClick={()=>submitTheForm()}>Login</button>
-      </form>
-    </div>
-  );
+  // return (
+  //   <div className="login-container">
+  //     <h2>Login</h2>
+  //     <form>
+  //       <div>
+  //         <label>Email:</label>
+  //         <input type="email" name="email" onChange={(e)=>inputHandeler("email",e.target.value)}/>
+  //       </div>
+  //       <div>
+  //         <label>Password:</label>
+  //         <input type="password" name="password" onChange={(e)=>inputHandeler("password",e.target.value)} />
+  //       </div>
+  //       <button type="submit" onClick={()=>submitTheForm()}>Login</button>
+  //     </form>
+  //   </div>
+  // );
 };
 
 export default Login;
