@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { uservaluereturn } from '../../App';
 import './NavBar.css';
 
 function NavBar() {
@@ -33,7 +34,10 @@ function NavBar() {
               <li><Link to="/settings" className="dropdown-link">Settings</Link></li>
               <li><Link to="/logout" className="dropdown-link">Logout</Link></li>
             </ul>
-          <
+            </div>
+        )}
+      </div>
+    </nav>
   );
 }
 
