@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useRef, useEffect,useState } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
 import './videoplayer.css';
 import { VideoSuggestion } from '../VideoSuggestion/VideoSuggestion';
 
@@ -78,9 +78,9 @@ const Videoplayer = () => {
       </video>
        <div>
         <button class="play" onClick={handlePlay}>Play</button>
-        <button class="pause" onClick={handlePause}>Pause</button>
+        {/* <button class="pause" onClick={handlePause}>Pause</button>
         <button className="forward" onClick={handleForward}>Forward 10s</button>
-        <button className="backward" onClick={handleBackward}>Backward 10s</button>
+        <button className="backward" onClick={handleBackward}>Backward 10s</button> */}
       </div>
       </div> 
       <div className=' right'>
