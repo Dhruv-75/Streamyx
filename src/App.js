@@ -5,6 +5,7 @@ import Login from './Component/Login/Login';
 import Signup from './Component/Signup/Signup';
 import MainPage from './Component/MainPage/mainpage';
 import Videoplayer from './Component/Videoplayer/videoplayer';
+import { Navigate } from 'react-router-dom';
 
 const App = () => {
   const [user, setUser] = useState({});

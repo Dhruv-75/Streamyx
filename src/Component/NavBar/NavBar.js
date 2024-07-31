@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { uservaluereturn } from '../../App';
 import './NavBar.css';
 
 function NavBar() {
@@ -9,7 +10,13 @@ function NavBar() {
     setDropdownOpen(!dropdownOpen);
   };
 
-  return (
+  const [showAboutPopup, setShowAboutPopup] = useState(false);
+
+const toggleAboutPopup = () => {
+  setShowAboutPopup(!showAboutPopup);
+};
+
+return (
     <nav className="navbar">
       <ul className="navbar-menu">
         <li className="navbar-item">
@@ -19,7 +26,7 @@ function NavBar() {
           <Link to="/mainpage" className="navbar-link">Main Page</Link>
         </li>
         <li className="navbar-item">
-          <Link to="/about" className="navbar-link">About</Link>
+          <Link  className="navbar-link" onClick={toggleAboutPopup}>About</Link>
         </li>
       </ul>
       <div className="navbar-profile">
@@ -33,10 +40,23 @@ function NavBar() {
               <li><Link to="/settings" className="dropdown-link">Settings</Link></li>
               <li><Link to="/logout" className="dropdown-link">Logout</Link></li>
             </ul>
-          </div>
+            </div>
         )}
       </div>
+      
+{showAboutPopup && (
+  <div className="about-popup">
+    <div className="about-popup-content">
+      <h2>About Us</h2>
+      <p>Welcome to Streamline Solutions, your go-to partner for efficient and affordable web streaming services. We are a passionate team of technology enthusiasts, dedicated to providing small and medium-sized organizations with the tools and support they need to reach their audiences through high-quality video streaming.</p>
+      <button onClick={toggleAboutPopup}>Close</button>
+    </div>
+  </div>
+)}
+
     </nav>
+
+    
   );
 }
 
