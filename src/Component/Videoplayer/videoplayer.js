@@ -1,6 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './videoplayer.css';
+import { VideoSuggestion } from '../VideoSuggestion/VideoSuggestion';
 
 const Videoplayer = () => {
   const location = useLocation();
@@ -69,36 +70,23 @@ const Videoplayer = () => {
   };
 
   return (
-    <div className="video-page">
-      <div className="video-container">
-        <video ref={videoRef} controls>
-          <source src={src} type={type} />
-          Your browser does not support the video tag.
-        </video>
-        <div className="video-details">
-          <h2>{title}</h2>
-          <p>{videoDetails.description}</p>
-          <p>{videoDetails.views}</p>
-          <p>{videoDetails.uploadDate}</p>
-        </div>
-        {/* <div className="video-controls">
-          <button className="play" onClick={handlePlay}>Play</button>
-          <button className="pause" onClick={() => videoRef.current.pause()}>Pause</button>
-          <button className="forward" onClick={() => videoRef.current.currentTime += 10}>Forward 10s</button>
-          <button className="backward" onClick={() => videoRef.current.currentTime -= 10}>Backward 10s</button>
-        </div> */}
+    <div className='container'>
+    <div className="video-container left">
+      <video ref={videoRef} width="600" controls>
+        <source src={src} type={type} />
+        Your browser does not support the video tag.
+      </video>
+       <div>
+        <button class="play" onClick={handlePlay}>Play</button>
+        <button class="pause" onClick={handlePause}>Pause</button>
+        <button className="forward" onClick={handleForward}>Forward 10s</button>
+        <button className="backward" onClick={handleBackward}>Backward 10s</button>
       </div>
-      <div className="suggested-videos">
-        {suggestedVideos.map((video, index) => (
-          <div className="suggested-video-card" key={index} onClick={() => handleThumbnailClick(video.videoUrl)}>
-            <img src={video.thumbnail} alt={video.title} />
-            <div className="suggested-video-info">
-              <div className="suggested-video-title">{video.title}</div>
-            </div>
-          </div>
-        ))}
+      </div> 
+      <div className=' right'>
+      <VideoSuggestion/>
       </div>
-    </div>
+      </div>
   );
 };
 
