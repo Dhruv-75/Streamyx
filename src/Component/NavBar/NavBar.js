@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { uservaluereturn } from '../../App';
 import './NavBar.css';
@@ -6,6 +6,17 @@ import './NavBar.css';
 function NavBar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
+
+  const [items, setItems] = useState([]);
+
+useEffect(() => {
+  const items = JSON.parse(localStorage.getItem('user'));
+  if (items) {
+   setItems(items);
+  }
+}, []);
+
+// console.log("in navbar",items.given_name.split("")[0])
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -15,7 +26,6 @@ function NavBar() {
 const toggleAboutPopup = () => {
   setShowAboutPopup(!showAboutPopup);
 };
-
 return (
     <nav className="navbar">
       <ul className="navbar-menu">
@@ -31,14 +41,14 @@ return (
       </ul>
       <div className="navbar-profile">
         <div className="profile-icon" onClick={toggleDropdown}>
-          <img src="https://via.placeholder.com/40" alt="Profile" className="profile-img"/>
+          <img src={items?.picture} alt={"img"} className="profile-img"/>
         </div>
         {dropdownOpen && (
           <div className="dropdown-menu">
             <ul>
               <li><Link to="/profile" className="dropdown-link">Profile</Link></li>
               <li><Link to="/settings" className="dropdown-link">Settings</Link></li>
-              <li><Link to="/logout" className="dropdown-link">Logout</Link></li>
+              <li><Link to="/login" className="dropdown-link">Logout</Link></li>
             </ul>
             </div>
         )}

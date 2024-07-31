@@ -1,24 +1,9 @@
-.container {
-  display: flex;
-  width: 100%;
-}
+/* videoplayer.css */
 
-.left {
-  flex: 0 0 80%;
-}
-
-.right {
-  margin-top: 30vh;
-  margin-left: 90vw;
-  flex: 0 0 20%;
-}
-
-
-.video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
 
 .video-page {
@@ -39,7 +24,6 @@
   overflow: hidden;
   padding: 20px;
   box-sizing: border-box;
-  width: 75%
 }
 
 .video-container video {
@@ -104,64 +88,25 @@ button:hover {
   transition: transform 0.3s, background-color 0.3s;
 }
 
-.pause:hover {
-  transform: translateY(2px);
-}
-
-.pause:focus {
-  outline: none;
-}
-
-.forward {
-  margin-right: 8px;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  border: none;
-  border-radius: 140px;
-  box-shadow: 40px 15px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  background: linear-gradient(to top, #000000, #ffffff);
-}
-
-.forward:hover {
-  transform: translateY(2px);
-}
-
-.backward {
-  margin-right: 8px;
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  border: none;
-  border-radius: 140px;
-  box-shadow: 40px 15px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  background: linear-gradient(to top, #000000, #ffffff);
-}
-
-.backward:hover {
-  transform: translateY(2px);
-}
-
-.backward:hover {
-  transform: translateY(2px);
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.suggested-video-card:hover {
+  transform: scale(1.05);
   background-color: #f0f0f0;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+.suggested-video-card img {
+  width: 120px;
+  height: 90px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.suggested-video-info {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.suggested-video-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
 }
