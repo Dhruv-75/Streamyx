@@ -12,12 +12,12 @@ function NavBar() {
   const [showAboutPopup, setShowAboutPopup] = useState(false); // State for about popup
 
   // Effect hook to fetch user data from local storage when the component mounts
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (user) {
-      setItems(user);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem('user'));
+  //   if (user) {
+  //     setItems(user);
+  //   }
+  // }, []);
 
   // Function to toggle the settings dropdown menu
   const toggleDropdown = () => {
@@ -40,10 +40,6 @@ function NavBar() {
         {/* Profile link that toggles the profile popup */}
         <li className="navbar-item">
           <Link className="navbar-link" onClick={toggleProfilePopup}>Profile</Link>
-        </li>
-        {/* Home link */}
-        <li className="navbar-item">
-          <Link to="/" className="navbar-link">Home</Link>
         </li>
         {/* Main Page link */}
         <li className="navbar-item">
@@ -82,9 +78,6 @@ function NavBar() {
               {/* <img src={items?.picture} alt="Profile" className="profile-popup-img" /> */}
               <h3>{items?.name}</h3>
               <p>Email: {items?.email}</p>
-              <p>Phone: {items?.phone}</p>
-              <p>Phone Number: {items?.email}</p>
-              <p>Address: {items?.phone}</p>
               {/* Add any other profile details you want */}
             </div>
           </div>
