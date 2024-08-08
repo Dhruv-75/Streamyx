@@ -1,20 +1,20 @@
-/* videoplayer.css */
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
 
+/* Container for the entire video page */
 .video-page {
   display: flex;
   justify-content: center;
   padding: 20px;
   background-color: #f0f0f0;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
+/* Container for the video player and details */
 .video-container {
   flex: 2;
   margin-right: 20px;
@@ -24,51 +24,47 @@ body {
   overflow: hidden;
   padding: 20px;
   box-sizing: border-box;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style for the video element inside the video container */
 .video-container video {
   width: 100%;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Container for video details (title, description, etc.) */
 .video-details {
   margin-top: 20px;
 }
 
+/* Style for the video title */
 .video-details h2 {
   margin: 0;
   font-size: 24px;
   color: #333;
 }
 
+/* Style for paragraphs in the video details */
 .video-details p {
   margin: 8px 0;
   color: #555;
 }
 
-.video-controls {
-  display: flex;
-  margin-top: 10px;
-}
-
-button {
-  margin-right: 8px;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  background: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #0056b3;
-}
-
+/* Container for suggested videos */
 .suggested-videos {
   flex: 1;
   display: flex;
@@ -77,6 +73,7 @@ button:hover {
   box-sizing: border-box;
 }
 
+/* Style for each suggested video card */
 .suggested-video-card {
   display: flex;
   align-items: center;
@@ -85,14 +82,17 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Suggested video card hover effect */
 .suggested-video-card:hover {
   transform: scale(1.05);
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Style for the video thumbnail image */
 .suggested-video-card img {
   width: 120px;
   height: 90px;
@@ -100,13 +100,34 @@ button:hover {
   object-fit: cover;
 }
 
+/* Container for suggested video information */
 .suggested-video-info {
   margin-left: 10px;
   padding: 10px;
 }
 
+/* Style for suggested video title */
 .suggested-video-title {
   font-size: 14px;
   font-weight: bold;
   color: #333;
+}
+
+/* Add smooth scrolling to the suggested videos */
+.suggested-videos {
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.suggested-videos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.suggested-videos::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.suggested-videos::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
 }

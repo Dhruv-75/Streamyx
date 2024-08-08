@@ -1,12 +1,18 @@
+/* Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3333336e;
+  background-color: #333;
   padding: 10px;
   border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Navbar Menu */
 .navbar-menu {
   list-style: none;
   display: flex;
@@ -14,31 +20,53 @@
   padding: 0;
 }
 
+/* Navbar Item */
 .navbar-item {
   margin: 0 10px;
+  position: relative;
 }
 
+/* Navbar Link */
 .navbar-link {
   color: white;
   text-decoration: none;
   padding: 10px 20px;
   display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Navbar Link Hover */
 .navbar-link:hover {
   background-color: #575757;
-  border-radius: 5px;
+  transform: scale(1.05);
 }
 
+/* Profile Icon */
 .profile-icon {
   cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
 }
 
+/* Profile Icon Hover */
+.profile-icon:hover {
+  color: #ccc;
+}
+
+/* Settings Icon */
 .settings-icon {
-  font-size: 2em; 
-  color: white; 
+  font-size: 2em;
+  color: white;
+  transition: color 0.3s ease;
 }
 
+/* Settings Icon Hover */
+.settings-icon:hover {
+  color: #ccc;
+}
+
+/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
   right: 0;
@@ -48,25 +76,40 @@
   border-radius: 8px;
   overflow: hidden;
   z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Show Dropdown Menu */
+.navbar-profile:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dropdown Menu List */
 .dropdown-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Dropdown Link */
 .dropdown-link {
   color: black;
   text-decoration: none;
   padding: 10px 20px;
   display: block;
+  transition: background-color 0.3s ease;
 }
 
+/* Dropdown Link Hover */
 .dropdown-link:hover {
   background-color: #f0f0f0;
 }
 
+/* Profile Popup Overlay */
+.profile-popup-overlay,
 .about-popup-overlay {
   position: fixed;
   top: 0;
@@ -78,8 +121,11 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  transition: opacity 0.3s ease;
 }
 
+/* Profile Popup */
+.profile-popup,
 .about-popup {
   background-color: white;
   padding: 20px;
@@ -88,13 +134,26 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.9);
   width: 80%;
   max-width: 500px;
   z-index: 1000;
   overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* Show Popup */
+.profile-popup.show,
+.about-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Popup Header */
+.profile-popup-header,
 .about-popup-header {
   background-color: #333;
   color: #fff;
@@ -104,127 +163,58 @@
   align-items: center;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.about-popup-content h2 {
-  text-align: center; 
-  margin: 0 0 20px; 
-}
-
-.close-button {
+/* Close Button */
+.profile-popup-header .close-button,
+.about-popup-header .close-button {
   background: none;
   border: none;
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
+/* Close Button Hover */
+.profile-popup-header .close-button:hover,
+.about-popup-header .close-button:hover {
+  color: #ccc;
+}
+
+/* Popup Content */
+.profile-popup-content,
 .about-popup-content {
   padding: 20px;
   text-align: left;
   line-height: 1.6;
 }
 
-.about-popup-content p {
-  margin: 0 0 10px;
-}
-
+/* Popup Button */
+.profile-popup button,
 .about-popup button {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
   background-color: #333;
-  color: #fff;
+  color: white;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Popup Button Hover */
+.profile-popup button:hover,
 .about-popup button:hover {
-  background-color: #555;
-}
-/* Profile Popup Overlay */
-.profile-popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  background-color: #575757;
+  transform: scale(1.05);
 }
 
-/* Profile Popup */
-.profile-popup {
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
-  z-index: 1000;
-  overflow: hidden;
-}
-
-/* Profile Popup Header */
-.profile-popup-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-/* Profile Popup Content Title */
-.profile-popup-content h2 {
-  text-align: center; 
-  margin: 0 0 20px; 
-}
-
-/* Close Button */
-.profile-popup-header .close-button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Profile Popup Content */
-.profile-popup-content {
-  padding: 20px;
-  text-align: left;
-  line-height: 1.6;
-}
-
-/* Profile Popup Content Paragraph */
-.profile-popup-content p {
-  margin: 0 0 10px;
-}
-
-/* Profile Popup Button */
-.profile-popup button {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Profile Popup Button Hover */
-.profile-popup button:hover {
-  background-color: #555;
+/* Profile Popup Image */
+.profile-popup-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
