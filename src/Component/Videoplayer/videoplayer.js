@@ -13,21 +13,44 @@ const Videoplayer = () => {
   const title = query.get('title') || 'Video Title';
 
   const allSuggestedVideos = [
-    { title: 'Fountain', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video1.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video1.mp4', description: 'A beautiful Fountain.', uploadDate: 'March 21, 2024', views: '10,000 views' },
-    { title: 'City', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video2.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video2.mp4', description: 'A bustling cityscape.', uploadDate: 'April 15, 2024', views: '20,000 views' },
-    { title: 'Animals', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video3.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video3.mp4', description: 'Wild animals in their natural habitat.', uploadDate: 'May 10, 2024', views: '30,000 views' },
-    { title: 'Work', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video4.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video4.mp4', description: 'People working in an office.', uploadDate: 'June 5, 2024', views: '15,000 views' },
-    { title: 'Photography', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video5.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video5.mp4', description: 'Tips and tricks for photography.', uploadDate: 'July 1, 2024', views: '25,000 views' },
-    { title: 'Beach', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video6.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video6.mp4', description: 'A relaxing beach view.', uploadDate: 'August 15, 2024', views: '5,000 views' },
-    { title: 'City Traffic', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video7.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video7.mp4', description: 'Busy city traffic.', uploadDate: 'September 10, 2024', views: '12,000 views' },
-    { title: 'Ocean', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video8.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video8.mp4', description: 'Calm ocean waves.', uploadDate: 'October 20, 2024', views: '18,000 views' },
-    { title: 'Dancing Lights', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video9.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video9.mp4', description: 'Colorful lights dancing.', uploadDate: 'November 11, 2024', views: '22,000 views' },
-    { title: 'Dancing Lights 2', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video10.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video10.mp4', description: 'Another view of dancing lights.', uploadDate: 'December 5, 2024', views: '16,000 views' },
-    { title: 'Birds', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video11.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video11.mp4', description: 'Birds flying in the sky.', uploadDate: 'January 14, 2024', views: '28,000 views' },
-    { title: 'Love', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Thumbnails/video12.png', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Videos/video12.mp4', description: 'A romantic love story.', uploadDate: 'February 14, 2024', views: '35,000 views' }
+    { title: 'Full Body Workout', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym1.png', description: 'Gym exercise routines.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym1.mp4' },
+    { title: 'Advanced Techniques', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym2.png', description: 'Advanced gym workouts.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym2.mp4' },
+    { title: 'Strength Training', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym3.png', description: 'Strength training exercises.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym3.mp4' },
+    { title: 'Cardio Routine', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym4.png', description: 'Cardio workouts.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym4.mp4' },
+    { title: 'Full-Body Routine', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym5.png', description: 'Full-body workouts.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym5.mp4' },
+    { title: 'Core Strengthening', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym6.png', description: 'Core strengthening routines.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym6.mp4' },
+    { title: 'Flexibility Training', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym7.png', description: 'Flexibility exercises.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym7.mp4' },
+    { title: 'Weight Lifting', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym8.png', description: 'Weight lifting techniques.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym8.mp4' },
+    { title: 'Bodyweight Workouts', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym9.png', description: 'Bodyweight exercises.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym9.mp4' },
+    { title: 'HIIT Training', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Thumbnail/Gym10.png', description: 'High-intensity interval training.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Gym+Exercise/Gym10.mp4' },
+
+    // Fitness Videos
+    { title: 'Basic Workout', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness1.png', description: 'Basic fitness routines.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness1.mp4' },
+    { title: 'Cardio Exercises', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness2.png', description: 'Cardio exercises.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness2.mp4' },
+    { title: 'Strength Training', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness3.png', description: 'Strength training routines.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness3.mp4' },
+    { title: 'Endurance Training', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness4.png', description: 'Endurance training.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness4.mp4' },
+    { title: 'Yoga and Flexibility', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness5.png', description: 'Yoga and flexibility.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness5.mp4' },
+    { title: 'Bodyweight Workouts', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness6.png', description: 'Bodyweight workouts.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness6.mp4' },
+    { title: 'Interval Training', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness7.png', description: 'Interval training.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness7.mp4' },
+    { title: 'High-Intensity Workouts', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness8.png', description: 'High-intensity workouts.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness8.mp4' },
+    { title: 'Training for Athletes', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness9.png', description: 'Training for athletes.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness9.mp4' },
+    { title: 'Fitness Challenges', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Thumbnails/Fitness10.png', description: 'Fitness challenges.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Fitness+Videos/Fitness10.mp4' },
+
+    // Diet Videos
+    { title: 'Healthy Eating Habits', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet1.png', description: 'Tips for healthy eating habits.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet1.mp4' },
+    { title: 'Meal Planning Tips', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet2.png', description: 'Effective meal planning tips.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet2.mp4' },
+    { title: 'Nutrition Basics', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet3.png', description: 'Understanding nutrition basics.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet3.mp4' },
+    { title: 'Weight Loss Strategies', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet4.png', description: 'Strategies for effective weight loss.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet4.mp4' },
+    { title: 'Balanced Diet Plans', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet5.png', description: 'Creating balanced diet plans.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet5.mp4' },
+    { title: 'Healthy Recipes', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet6.png', description: 'Delicious and healthy recipes.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet6.mp4' },
+    { title: 'Diet for Muscle Gain', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet7.png', description: 'Nutrition for muscle growth.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet7.mp4' },
+    { title: 'Low-Carb Diets', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet8.png', description: 'Exploring low-carb diet options.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet8.mp4' },
+    { title: 'Meal Prep for Success', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet9.png', description: 'Meal prep strategies for success.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet9.mp4' },
+    { title: 'Eating for Energy', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet10.png', description: 'Eating habits for increased energy.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet10.mp4' },  
   ];
   
   const [videoDetails, setVideoDetails] = useState({
+    title: '',
     description: '',
     uploadDate: '',
     views: ''
@@ -48,10 +71,13 @@ const Videoplayer = () => {
     const currentVideo = allSuggestedVideos.find(video => video.videoUrl === src);
     if (currentVideo) {
       setVideoDetails({
+        title: currentVideo.title,
         description: currentVideo.description,
         uploadDate: currentVideo.uploadDate,
         views: currentVideo.views
       });
+      // Set the document title to the current video's title
+      document.title = currentVideo.title;
     }
 
     const filteredVideos = allSuggestedVideos.filter(video => video.videoUrl !== src);
@@ -64,14 +90,8 @@ const Videoplayer = () => {
     };
 
     const shuffledVideos = shuffleArray(filteredVideos);
-    setSuggestedVideos(shuffledVideos.slice(0, 5));
+    setSuggestedVideos(shuffledVideos.slice(0, 10));
   }, [src]);
-
-  const handlePlay = () => {
-    videoRef.current.play().catch(error => {
-      console.error("Play request failed", error);
-    });
-  };
 
   const handleThumbnailClick = (videoUrl) => {
     navigate(`/videoplayer?src=${encodeURIComponent(videoUrl)}&type=video/mp4`);
@@ -85,7 +105,7 @@ const Videoplayer = () => {
           Your browser does not support the video tag.
         </video>
         <div className="video-details">
-          <h2>{title}</h2>
+          <h2>{videoDetails.title}</h2>
           <p>{videoDetails.description}</p>
           <p>{videoDetails.views}</p>
           <p>{videoDetails.uploadDate}</p>

@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Sets the character encoding for the document -->
     <meta charset="utf-8" />
-    
-    <!-- Specifies the favicon for the webpage -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    
-    <!-- Ensures proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Sets the theme color for the browser's UI elements -->
     <meta name="theme-color" content="#000000" />
-    
-    <!-- Provides a description of the webpage -->
     <meta name="description" content="Web site created using create-react-app" />
-    
-    <!-- Icon for when the app is added to the home screen on an Apple device -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    
-    <!-- Links to the manifest file for PWA settings -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
-    <!-- The title of the webpage -->
     <title>React App</title>
+    
+    <!-- Include CSS for animated particles -->
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+      }
+
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(0, 255, 255, 0.8);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      @keyframes fadeInOut {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0;
+        }
+        50% {
+          transform: translateY(-50vh) scale(1.2);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Message displayed if JavaScript is disabled -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     
-    <!-- The root div where the React app will be mounted -->
     <div id="root"></div>
     
     <!-- Include the Google API script for Google Sign-In functionality -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Include JavaScript for particles -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const particlesContainer = document.createElement('div');
+        particlesContainer.className = 'particles';
+        document.body.appendChild(particlesContainer);
+
+        const particleCount = 100;
+        const colors = ['#00FFFF', '#FF00FF', '#FFFF00', '#00FF00', '#FF0000'];
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          const size = Math.random() * 5 + 5; // Size between 5 and 10
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.top = `${Math.random() * 100}vh`;
+          particle.style.left = `${Math.random() * 100}vw`;
+          particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          particle.style.animation = `fadeInOut ${Math.random() * 5 + 5}s linear infinite`;
+          particle.style.animationDelay = `${Math.random() * 10}s`; // Stagger the start time
+          particlesContainer.appendChild(particle);
+        }
+      });
+    </script>
   </body>
 </html>
