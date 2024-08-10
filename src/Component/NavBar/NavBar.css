@@ -220,11 +220,171 @@
   transform: scale(1.05);
 }
 
-/* Profile Popup Image */
-.profile-popup-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
+
+/* Trainer Popup Overlay */
+.trainer-popup-overlay, .dietician-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Trainer Popup */
+.trainer-popup, .dietician-popup {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 80%;
+  max-width: 500px;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Trainer Popup */
+.trainer-popup.show, .dietician-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Trainer Popup Header */
+.trainer-popup-header, .dietician-popup-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Trainer Popup Content */
+.trainer-popup-content, .dietician-popup-content {
+  padding: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Trainer Popup Button */
+.trainer-popup button,.dietician-popup button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Trainer Popup Button Hover */
+.trainer-popup button:hover, .dietician-popup button:hover {
+  background-color: #575757;
+  transform: scale(1.05);
+}
+
+/* Contact Popup Overlay */
+.contact-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Contact Popup */
+.contact-popup {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 80%;
+  max-width: 500px;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Popup */
+.contact-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Popup Content */
+.contact-popup-content {
+  padding: 20px;
+  text-align: left; /* Align content to the left */
+  line-height: 1.6;
+}
+
+/* Contact List */
+.contact-popup-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-popup-content ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Popup Button */
+.contact-popup-content button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+}
+
+/* Popup Button Hover */
+.contact-popup-content button:hover {
+  background-color: #575757;
+  transform: scale(1.05);
+}
+
+.contact-popup-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: background-color 0.3s ease;
 }

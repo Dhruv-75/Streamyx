@@ -57,19 +57,20 @@ function MainPage() {
     { title: 'Eating for Energy', thumbnail: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Thumbnails/Diet10.png', description: 'Eating habits for increased energy.', videoUrl: 'https://video-streaming-service-storage.s3.amazonaws.com/Diet+Videos/Diet10.mp4' },
 ];
 
-const shuffledVideos = shuffleArray(videos);
-  const indexOfLastVideo = currentPage * videosPerPage;
-  const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
-  const currentVideos = shuffledVideos.slice(indexOfFirstVideo, indexOfLastVideo);
+  const shuffledVideos = shuffleArray(videos); // Shuffle videos
+  const indexOfLastVideo = currentPage * videosPerPage; // Calculate index of last video on current page
+  const indexOfFirstVideo = indexOfLastVideo - videosPerPage; // Calculate index of first video on current page
+  const currentVideos = shuffledVideos.slice(indexOfFirstVideo, indexOfLastVideo); // Get videos for current page
 
   const totalPages = Math.ceil(videos.length / videosPerPage);
 
-  const nextPage = () => setCurrentPage(prevPage => prevPage + 1);
-  const prevPage = () => setCurrentPage(prevPage => prevPage - 1);
+  const nextPage = () => setCurrentPage(prevPage => prevPage + 1); // Go to next page
+  const prevPage = () => setCurrentPage(prevPage => prevPage - 1); // Go to previous page
 
+  // Handle video thumbnail click
   const handleThumbnailClick = (video) => {
     const { videoUrl, title } = video;
-    navigate(`/videoplayer?src=${encodeURIComponent(videoUrl)}&type=video/mp4&title=${encodeURIComponent(title)}`);
+    navigate(`/videoplayer?src=${encodeURIComponent(videoUrl)}&type=video/mp4&title=${encodeURIComponent(title)}`); // Navigate to video player page
   };
 
   return (
@@ -80,29 +81,31 @@ const shuffledVideos = shuffleArray(videos);
           {currentVideos.map((video, index) => (
             <div className="video-card" key={index} onClick={() => handleThumbnailClick(video)}>
               <div className="thumbnail">
-                <img src={video.thumbnail} alt={video.title} />
+                <img src={video.thumbnail} alt={video.title} /> {/* Video thumbnail */}
               </div>
-              <div className="video-title">{video.title}</div>
+              <div className="video-title">{video.title}</div> {/* Video title */}
               <div className="description-overlay">
-                <div className="description-content">{video.description}</div>
+                <div className="description-content">{video.description}</div> {/* Video description */}
               </div>
             </div>
           ))}
         </div>
+
+        {/* Pagination buttons */}
         <div className="button-container">
           <button
             className={`button ${currentPage === 1 ? 'disabled' : ''}`}
             onClick={prevPage}
             disabled={currentPage === 1}
           >
-            Previous
+            Previous {/* Previous button */}
           </button>
           <button
             className={`button ${currentPage === totalPages ? 'disabled' : ''}`}
             onClick={nextPage}
             disabled={currentPage === totalPages}
           >
-            Next
+            Next {/* Next button */}
           </button>
         </div>
       </div>
